@@ -1,0 +1,676 @@
+$mainColor: #000;
+$white: #fff;
+$mainParagColor: #999;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Roboto", sans-serif;
+}
+// font-family: 'Kaushan Script', cursive;
+h2 {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 1;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+h3 {
+  font-weight: 400;
+  font-family: "Kaushan Script", cursive;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+%after-line {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  width: 40px;
+  height: 2px;
+  background: #f38181;
+  transform: translate(-50%);
+}
+
+// start navbar
+.navbar {
+  background: rgba(243, 129, 129, 0.9);
+  .navbar-brand {
+    color: #fff;
+    font-weight: bold;
+  }
+  .navbar-nav {
+    .nav-item {
+      margin-right: 30px;
+
+      .nav-link {
+        color: #fff;
+      }
+      i {
+        color: #fff;
+      }
+    }
+    .active {
+      text-decoration: underline #fce38a 2px;
+      text-underline-offset: 6px;
+    }
+  }
+}
+// start carousel
+.carousel-one {
+  position: relative;
+  height: 90vh;
+  background-image: url(../image/bg-header.jpg);
+  background-size: cover;
+  // z-index: -1;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #f38181;
+    background: linear-gradient(
+      to bottom,
+      rgba(243, 129, 129, 0.9),
+      rgba(252, 227, 138, 0.9)
+    );
+  }
+  .carousel-inner {
+    .carousel-item {
+      .carousel-caption {
+        height: 300px;
+        width: 100%;
+        text-align: center;
+        z-index: 99999;
+        margin-top: 200px;
+        h5 {
+          color: #000;
+        }
+      }
+    }
+  }
+}
+// end carousel
+
+// start story about us
+.story-about-us-wrapper {
+  .info {
+    h2 {
+      position: relative;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 50px;
+      &::after {
+        @extend %after-line;
+      }
+    }
+    p {
+      width: 65%;
+      margin: auto;
+      color: $mainParagColor;
+    }
+  }
+  .card {
+    background: #95e1d3;
+    display: inline-block;
+
+    .overlay {
+      display: block;
+      position: relative;
+      left: 0;
+      top: 0;
+      transition: all 0.3s ease-in-out;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        background: rgba(243, 129, 129, 0.9);
+        background: linear-gradient(
+          to bottom,
+          rgba(243, 129, 129, 0.9),
+          rgba(252, 227, 138, 0.9)
+        );
+      }
+    }
+    &:hover .overlay {
+      left: -10px;
+      top: -10px;
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+// end story about us
+
+// start states
+
+.states-wrapper {
+  min-height: 200px;
+  padding: 0;
+  background: #95e1d3;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  .states {
+    padding: 60px 5px;
+    border-right: 1px solid rgba(255, 255, 255, 0.35);
+    color: $white;
+    h2 {
+      font-size: 65px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    span {
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: normal;
+    }
+  }
+}
+// end states
+
+// start services
+.services-wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .head {
+    text-transform: none;
+    font-weight: 400;
+    font-family: "Kaushan Script", cursive;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .service {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .serv-head {
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-family: arial;
+    }
+    p {
+      color: $mainParagColor;
+      font-size: 13px;
+    }
+  }
+  h2 {
+    &::after {
+      @extend %after-line;
+    }
+  }
+}
+// end services
+
+// start unique design
+.unique-design-wrappper {
+  padding-top: 70px;
+  margin-bottom: 30px;
+  background: url(../image/unique-design/bg-unique-design.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  h2 {
+    &::after {
+      @extend %after-line;
+    }
+  }
+  .img-wrap {
+    position: relative;
+    .tab {
+      width: 30%;
+    }
+    .mobile {
+      position: absolute;
+      bottom: -60px;
+      left: 50%;
+      margin-left: 140px;
+      width: 10%;
+    }
+  }
+}
+// end unique design
+
+// start what we doo
+.what-we-do-wrapper {
+  .img-wrap {
+    width: 400px;
+    img 
+    {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+  .services-info {
+    width: 60%;
+    margin: auto;
+    .ser-head {
+      &::after {
+        @extend %after-line;
+      }
+    }
+    .service-body {
+      color: $mainParagColor;
+      font-size: 14px;
+      margin-bottom: 50px;
+    }
+  }
+  .accordion,
+  .accordion-collapse {
+    button {
+      text-transform: uppercase;
+      font-weight: thin;
+    }
+    .acc-img {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
+}
+// end what we dooo
+
+// start testimonials
+.testimonials-wrapper {
+  .carousel-two {
+    button {
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        color: #555;
+        background-color: #555;
+        border-radius: 50%;
+        display: inline-block;
+      }
+    }
+    .carousel-caption {
+      p {
+        text-align: left;
+        color: $mainParagColor;
+      }
+      .img-wrapp {
+        margin-right: 20px;
+        width: 100px;
+        height: 100px;
+        img {
+          object-fit: contain;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+// end testimonials
+
+// start meet our team
+.meet-our-team-wrapper {
+  .team-title {
+    width: 70%;
+    margin: auto;
+    h2 {
+      &::after {
+        @extend %after-line;
+      }
+    }
+    p {
+      color: $mainParagColor;
+    }
+  }
+  .team-card {
+    background: #95e1d3;
+    display: inline-block;
+
+    .overlay {
+      display: block;
+      position: relative;
+      left: 0;
+      top: 0;
+      transition: all 0.3s ease-in-out;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        background: rgba(243, 129, 129, 0.9);
+        background: linear-gradient(
+          to bottom,
+          rgba(243, 129, 129, 0.9),
+          rgba(252, 227, 138, 0.9)
+        );
+      }
+    }
+    &:hover .overlay {
+      left: -10px;
+      top: -10px;
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  .team-name {
+    margin-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .desc {
+    display: block;
+    text-align: center;
+    color: $mainParagColor;
+  }
+}
+// end meet our team
+
+// start logos
+.logos-wrapper {
+  background-color: #f8f8f8;
+}
+// end logos
+
+// start our work
+.our-work-wrapper {
+  .container-fluid {
+    margin: 0 -12px;
+    .work-title {
+      width: 60%;
+      margin: auto;
+      h2 {
+        &::after {
+          @extend %after-line;
+        }
+      }
+      p {
+        color: $mainParagColor;
+      }
+    }
+  }
+  .img-wrap {
+    .overlay {
+      display: block;
+      position: relative;
+      left: 0;
+      top: 0;
+      transition: all 0.3s ease-in-out;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        background: rgba(243, 129, 129, 0.9);
+        background: linear-gradient(
+          to bottom,
+          rgba(243, 129, 129, 0.9),
+          rgba(252, 227, 138, 0.9)
+        );
+      }
+      img {
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+    &:hover .overlay {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// end our work
+
+// start  another-testimonals
+.another-testimonals {
+  margin-top: 50px;
+  .carousel-three {
+    button {
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        color: #555;
+        background-color: #555;
+        border-radius: 50%;
+        display: inline-block;
+      }
+    }
+    .carousel-caption {
+      p {
+        text-align: left;
+        color: $mainParagColor;
+        font-style: italic;
+        font-size: 20px;
+      }
+      .img-wrapp {
+        margin-right: 20px;
+        img {
+          object-fit: contain;
+          width: 100%;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+// end another-testimonals
+
+// start happy-clients
+.happy-clients-wrapper {
+  background-image: url(./../image/happy-client/bg-happy-client.jpg);
+  background-size: cover;
+  .happy-clients-title {
+    h2 {
+      &::after {
+        @extend %after-line;
+      }
+    }
+  }
+  .client {
+    .img-wrap {
+      img {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    .info {
+      margin-left: 50px;
+      h4 {
+        font-size: 14px;
+      }
+      .postion {
+        position: relative;
+        padding-bottom: 12px;
+        display: inline-block;
+        font-style: italic;
+        margin-bottom: 12px;
+        color: #999;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 50px;
+          height: 2px;
+          background: #f38181;
+        }
+      }
+      p {
+        letter-spacing: -0.01em;
+        color: #999;
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+// end happy-clients
+
+// start latest-blog
+.latest-blog-wrapper {
+  .blog-title {
+    h2 {
+      &::after {
+        @extend %after-line;
+      }
+    }
+  }
+  .blog-item {
+    .img-wrap {
+      position: relative;
+      .date {
+        position: absolute;
+        background: #95e1d3;
+        left: -10px;
+        bottom: 10px;
+        padding: 10px 15px;
+        color: #fff;
+        text-align: center;
+        .number {
+          display: block;
+          font-size: 28px;
+          line-height: 100%;
+          font-weight: 700;
+          font-family: "Montserrat", sans-serif;
+        }
+        .text {
+          display: block;
+          font-weight: 300;
+          font-style: italic;
+        }
+      }
+    }
+    .blog-info {
+      h4 {
+        font-size: 14px;
+        color: #2ec06c;
+      }
+      p {
+        color: #999;
+        font-size: 15px;
+        letter-spacing: -0.01em;
+      }
+      .view {
+        font-size: 15px;
+        color: #999;
+        margin-right: 50px;
+        i {
+          color: #2ec06c;
+        }
+      }
+      .comments {
+        margin-right: 0;
+      }
+    }
+  }
+}
+// end latest-blog
+
+// start map
+.map-wrapper {
+  background-image: url(../image/map/bg-map.jpg);
+  background-size: cover;
+  .map-info {
+    color: #f28989;
+    h2 {
+      font-size: 30px;
+      &::after {
+        @extend %after-line;
+      }
+    }
+    i {
+      display: inline-block;
+      font-size: 50px;
+      margin-bottom: 30px;
+    }
+  }
+}
+// end map
+
+// start footer
+.footer-wrapper {
+  .foot-info {
+    h4 {
+      color: #999;
+      font-weight: bold;
+    }
+    p {
+      color: #999;
+      letter-spacing: -0.01rem;
+    }
+    .follower-num {
+      font-weight: bold;
+    }
+    .follow-us {
+      color: #999;
+      font-style: italic;
+    }
+    i {
+      color: #95e1d3;
+      margin-right: 10px;
+    }
+    input {
+      padding: 5px 15px;
+    }
+    button {
+      margin-left: -5px;
+      background-color: #95e1d3;
+      color: #fff;
+      border: none;
+      outline: none;
+      padding: 8px 15px;
+    }
+  }
+  .blogs {
+    .blog {
+      .blog-info {
+        p {
+          color: #2ec06c;
+          font-size: 14px;
+        }
+        span {
+          color: #999;
+          font-style: italic;
+        }
+      }
+    }
+  }
+  .instagram {
+    span {
+      color: #999;
+      font-style: italic;
+    }
+  }
+  .copyRights {
+    color: #999;
+    h6 {
+      font-size: 14px;
+    }
+  }
+}
+// end footer
